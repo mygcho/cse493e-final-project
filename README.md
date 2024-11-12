@@ -30,5 +30,5 @@ npm start
 2. In a new terminal window (starting from the root of your project):
 ```bash
 cd frontend
-npm start
+npm run dev
 ```
