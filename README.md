@@ -1,7 +1,7 @@
 
 ## Prerequisites ‼️
 
-To use this template, you need to have the following installed on your machine:
+To use, you need to have the following installed on your machine:
 
 - Node.js 
 - npm 
