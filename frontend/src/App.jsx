@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import FeaturedImages from './components/FeaturedImages/FeaturedImages'
-import DrawingCanvas from './components/DrawingCanvas/DrawingCanvas'
+import TranscriptUploader from './components/TranscriptUploader/TranscriptUploader'
 import { getMessage } from './services/message';
 import './App.css'
 
@@ -38,7 +38,7 @@ const App = () => {
     <div className='home-page'>
       <FeaturedImages/>
       <p className='message'>{message}</p>
-      <DrawingCanvas />
+      <TranscriptUploader />
     </div>
   )
 }
