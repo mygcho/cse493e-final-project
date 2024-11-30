@@ -1,20 +1,14 @@
 
 ## Prerequisites ‼️
 
-To use, you need to have the following installed on your machine:
-
-- Node.js 
-- npm 
-
-3. Install the required dependencies for both the frontend and backend:
+1. Install the required dependencies for both the frontend and backend:
 
 ```bash
-cd <your-repo-name>
-cd frontend
-npm i
-cd ../backend
-npm i
+ pip install -r requirements.txt
 ```
+
+The requirements file contains all of the programs and libraries being used for the project, and is especially 
+needed for the Gradio frontend Python library and the Hugging Face models used for PlainScribe.
 
 ## Development 💻
 
@@ -23,12 +17,8 @@ To start the development environment, follow these steps:
 1. Start your server (from the root of the project):
 
 ```bash
-cd backend
-npm start
+python main.py
 ```
 
-2. In a new terminal window (starting from the root of your project):
-```bash
-cd frontend
-npm run dev
-```
+The main.py file contains the start-up scripts for both the front and back end, and will start up the Hugging Face
+configs. Open up the application locally through 'http://127.0.0.1:7860/'.
