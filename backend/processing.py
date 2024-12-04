@@ -13,6 +13,7 @@ from typing import Any, Mapping, Optional, Text
 import yaml
 import shutil
 from backend.utils import convert_seconds_to_srt_time, format_selector, TqdmProgressHook
+from transformers import pipeline
 
 # Load configuration from YAML file
 with open('config.yaml', 'r', encoding='utf-8') as file:
@@ -121,27 +122,29 @@ def transcribe_video(input_video, language, progress=gr.Progress(track_tqdm=True
     progress_bar.close()
     subs.save(srt_output_path, encoding='utf-8')
 
+    # Generate plain language subtitles
+    plain_srt_path = generate_plain_language_subtitles(srt_output_path, language)
+
     for chunk_file in chunk_files:
         os.remove(chunk_file)
     os.remove(wav_path)
 
-    return (video, srt_output_path), (video, srt_output_path), gr.update(value=video, visible=True), gr.update(value=srt_output_path, visible=True)
+    return (video, srt_output_path, plain_srt_path), (video, srt_output_path), gr.update(value=video, visible=True), gr.update(value=srt_output_path, visible=True), gr.update(value=plain_srt_path, visible=True)
 
 # Helper function to clear the video player and remove the SRT file
 def clear_output(video_and_srt_paths):
-
-    video, srt_output_path = video_and_srt_paths
-
+    video, srt_output_path, plain_srt_path = video_and_srt_and_plain_srt_paths
+    
     if os.path.exists(srt_output_path):
         os.remove(srt_output_path)
-
-    # The below only removes the video file from the result folder locally, doesn't do any clearing from the server side
+    if os.path.exists(plain_srt_path):
+        os.remove(plain_srt_path)
     if os.path.exists(video):
         os.remove(video)
-
-    return gr.update(value=None), gr.update(value=None), gr.update(visible=False), gr.update(visible=False),\
-         gr.update(value=None, label="Enter YouTube URL", placeholder="https://www.youtube.com/watch?v=example"), gr.update(value=None, visible=False),\
-         gr.update(value=None)
+    
+    return gr.update(value=None), gr.update(value=None), gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), \
+           gr.update(value=None, label="Enter YouTube URL", placeholder="https://www.youtube.com/watch?v=example"), gr.update(value=None, visible=False), \
+           gr.update(value=None)
 
 def download_and_update(url):
 
@@ -165,3 +168,25 @@ def download_and_update(url):
 
     return output_file_from_download
 
+
+
+def generate_plain_language_subtitles(srt_file_path, language):
+    subs = pysrt.open(srt_file_path)
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    
+    plain_subs = pysrt.SubRipFile()
+    
+    for sub in subs:
+        summary = summarizer(sub.text, max_length=50, min_length=10, do_sample=False)[0]['summary_text']
+        plain_sub = pysrt.SubRipItem(
+            index=sub.index,
+            start=sub.start,
+            end=sub.end,
+            text=summary
+        )
+        plain_subs.append(plain_sub)
+    
+    plain_srt_file_path = srt_file_path.replace('.srt', '_plain.srt')
+    plain_subs.save(plain_srt_file_path, encoding='utf-8')
+    
+    return plain_srt_file_path
