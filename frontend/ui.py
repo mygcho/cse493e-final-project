@@ -1,6 +1,7 @@
 import gradio as gr
 from backend.processing import transcribe_video, clear_output, download_and_update
 
+import gradio as gr
 
 def prepare_to_download():
     return "Downloading and Processing Videos...", gr.update(visible=True)
@@ -12,8 +13,11 @@ def show_uploaded_video(video_file):
     return video_file.name
 
 def create_interface(language_choices):
-    with gr.Blocks() as iface:
+    with gr.Blocks(theme=gr.themes.Soft()) as iface:
         gr.Markdown("# PlainScribe")
+    #     gr.Markdown("""
+    # # PlainScribe <img src="https://photos.onedrive.com/photo/C0B185B397D4957F!s3d08f7c9ece34b078fcabf7157c30558?view=all" alt="icon" style="vertical-align: middle; height: 24px;">
+    # """)
         video_and_srt_and_plain_srt_paths = gr.State()
         
         with gr.Row():
