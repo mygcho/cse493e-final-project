@@ -20,15 +20,13 @@ def show_uploaded_video(video_file):
 
 def create_interface(language_choices):
 
-    
-
-    with gr.Blocks(theme=gr.themes.Soft()) as iface:
+    with gr.Blocks(gr.themes.Soft(), css="C:\\Users\\sshre\\CSE493E\\cse493e-final-project\\frontend\\customStyle.css") as iface:
         gr.Markdown(f"""
     <div style="display: flex; align-items: center;">
         <h1 style="margin: 0;">PlainScribe</h1>
-        <img src="data:image/png;base64,{base64_image}" alt="icon" style="height: 32px; margin-left: 10px;">
+        <img src="data:image/png;base64,{base64_image}" alt="scroll icon with writing and feather pen" style="height: 32px; margin-left: 10px;">
     </div>
-    """)
+    """)       
         video_and_srt_and_plain_srt_paths = gr.State()
         
         with gr.Row():
