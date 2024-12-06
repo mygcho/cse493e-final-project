@@ -3,6 +3,12 @@ from backend.processing import transcribe_video, clear_output, download_and_upda
 
 import gradio as gr
 
+import base64
+
+with open("C:/Users/sshre/CSE493E/cse493e-final-project/icons/scribeIcon.png", "rb") as image_file:
+    base64_image = base64.b64encode(image_file.read()).decode('utf-8')
+
+
 def prepare_to_download():
     return "Downloading and Processing Videos...", gr.update(visible=True)
 
@@ -13,11 +19,16 @@ def show_uploaded_video(video_file):
     return video_file.name
 
 def create_interface(language_choices):
+
+    
+
     with gr.Blocks(theme=gr.themes.Soft()) as iface:
-        gr.Markdown("# PlainScribe")
-    #     gr.Markdown("""
-    # # PlainScribe <img src="https://photos.onedrive.com/photo/C0B185B397D4957F!s3d08f7c9ece34b078fcabf7157c30558?view=all" alt="icon" style="vertical-align: middle; height: 24px;">
-    # """)
+        gr.Markdown(f"""
+    <div style="display: flex; align-items: center;">
+        <h1 style="margin: 0;">PlainScribe</h1>
+        <img src="data:image/png;base64,{base64_image}" alt="icon" style="height: 32px; margin-left: 10px;">
+    </div>
+    """)
         video_and_srt_and_plain_srt_paths = gr.State()
         
         with gr.Row():
