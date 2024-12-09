@@ -5,9 +5,7 @@ date: 2024-12-08
 layout: post
 ---
 
-# PlainScribe {: style="color: #32006e;" }
-
-An web app for generating plain text subtitles and transcripts for videos
+# PlainScribe: A web app for generating plain text subtitles and transcripts for videos {: style="color: #32006e;" }
 
 ## Introduction {: style="color: #32006e;" }
 
