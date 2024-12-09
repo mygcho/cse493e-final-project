@@ -7,6 +7,8 @@ layout: post
 
 # PlainScribe: A web app for generating plain text subtitles and transcripts for videos {: style="color: #32006e;" }
 
+[**PlainScribe GitHub Repository**](https://github.com/mygcho/cse493e-final-project)
+
 ## Introduction {: style="color: #32006e;" }
 
 In today’s media-based world, we often consume video content. Whether it is a YouTube video or an important team meeting recording, we often try our best to understand the content. However, the lack of captions and video transcripts can hinder one’s understanding of the content. Currently, many videos do not have subtitles or automated captions. Many videos, especially newer YouTube uploads, do not have captions, which is an accessibility issue. The lack of captions can leave out populations from being informed. Auto-generated captions also lack a neat and easy-to-follow format when videos are played. Currently, videos that have captions or transcripts do not provide plain text versions of the transcripts. Our project aims to help individuals who face challenges in understanding complex language.
