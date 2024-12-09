@@ -5,15 +5,17 @@ date: 2024-12-08
 layout: post
 ---
 
-# PlainScribe
+# PlainScribe {: style="color: #32006e;" }
 
-### Introduction
+An web app for generating plain text subtitles and transcripts for videos
+
+## Introduction {: style="color: #32006e;" }
 
 In today’s media-based world, we often consume video content. Whether it is a YouTube video or an important team meeting recording, we often try our best to understand the content. However, the lack of captions and video transcripts can hinder one’s understanding of the content. Currently, many videos do not have subtitles or automated captions. Many videos, especially newer YouTube uploads, do not have captions, which is an accessibility issue. The lack of captions can leave out populations from being informed. Auto-generated captions also lack a neat and easy-to-follow format when videos are played. Currently, videos that have captions or transcripts do not provide plain text versions of the transcripts. Our project aims to help individuals who face challenges in understanding complex language.
 
 In a professional context, working environments may not be accessible and do not always consider diverse needs of employees. Employees often face difficulties understanding terminology and content, especially if they have less experience. When starting out on a new job, people may find all the information overwhelming. This is especially true for those with intersectional identities, whether they are neurodiverse or speak English as a second language. With large amounts of content during team meetings, employees may face information overload. Plain text transcripts can help employees easily follow along and understand content. Overall, PlainScribe can improve communication in leadership, academic, or professional roles. When everyone can understand what is being said, there are fewer misunderstandings. PlainScribe aims to create more inclusive experiences when interacting with media content, and is helpful for users with disabilities and users without disabilities overall.
 
-### Positive Disability Principals
+## Positive Disability Principals {: style="color: #32006e;" }
 
 **Is the practice, policy, or technology ableist?**
 
@@ -27,7 +29,7 @@ This project is partly accessible. It helps people who struggle with complex lan
 
 The project is not fully disability-led. While it is informed by first-person accounts and centers the needs of individuals with disabilities, disabled individuals were actively involved in the design, development, or leadership of the project.
 
-**Is it being used to give control and improve agency for people with disabilities?**
+**Is it being used to give control and improve agency for people with disabilities?** 
 
 Yes, this tool enhances agency for people with disabilities by providing them with the means to engage more fully in professional settings. It allows users to understand and participate in meetings in real time without external support, reducing dependency and enabling self-sufficiency. The project also acknowledges diverse communication needs, empowering people to advocate for their inclusion in decision-making processes.
 
@@ -35,7 +37,7 @@ Yes, this tool enhances agency for people with disabilities by providing them wi
 
 Partially. While the project demonstrates intersectional awareness by addressing the needs of multiple groups, including those with cognitive disabilities and non-native speakers, it could be strengthened by further engaging multiple disabled individuals in the design process. It does recognize the intersectionality of needs but might not yet fully encompass all possible overlapping identities without additional community feedback.
 
-### Methodology and Results
+## Methodology and Results {: style="color: #32006e;" }
 
 The main features we wanted to implement for this project was to add subtitles to videos that do not have them, and add downloading and transcribing features as a minimum functionality. Adding options for different transcription languages, and letting the user have the option to download the video, original subtitles, and the plain language subtitles created a large range of use for our application. To increase the flexibility and options for video input, we wanted to add the feature for users to be able to add a YouTube URL or directly be able to transcribe it through our app, and additionally let the user upload media from their own device.  We also had the goal of implementing real-time system feedback to the user through a progress bar, so the user is well-informed while using PlainScribe.
 
@@ -47,15 +49,15 @@ To generate the plain text version of the transcript, the app uses Hugging Face�
 
 Once the video is processed, the result is a new section on the application with the options to download the video, download the subtitles, or download the plain language subtitles. Throughout the whole process, a purple progress bar shows how far along PlainScribe is in downloading and transcribing the application. They can be downloaded in .mov and .srt formats, respectively. The .srt file can be viewable via Microsoft Word, to ensure that the transcript is viewable in an accessible document. The subtitles contain the timestamps of the speaker notes, and show the real audio versus the plain language transcription from the PlainScribe application.
 
-### Disability Justice Analysis
+## Disability Justice Analysis {: style="color: #32006e;" }
 
-#### Intersectionality
+### Intersectionality {: style="color: #32006e;" }
 
 **What it means:** Intersectionality in the context of disability involves the diverse lived experiences and identities of disabled people, which influence their perspectives and experiences in society. Diverse experiences and identities can include factors such as socioeconomic status, gender, race, and having multiple disabilities. The Disability Justice principle of Intersectionality recognizes that individuals often experience multiple, overlapping forms of discrimination or disadvantage due to their intersecting social identities.
 
 **How our tool helps:** Designing and developing a tool that translates transcripts into plain text will support people with multiple disabilities and intersectional identities, because they can now process information in a simple format. Often in corporate settings, there are unrealistic expectations placed on employees without consideration of their needs and/or disability due to their level, years of experience, or standing in the company. Professional settings are also where employees of marginalized communities based on minority race and gender have needs that are often overlooked, as those who are higher-up are often not part of those communities and often do not fully acknowledge or understand their needs. There are many employees that may be on the lower end of the “corporate ladder” and are expected to uphold expectations on knowing and completing projects without realistic timing and fairness. Our project supports those who may relate to these intersectional identities, so they can look back at meetings and find a better summarized and easily comprehensible idea of meeting updates, tasks, and expectations while maintaining professionalism. Our project also benefits both disabled and non-disabled people since plain text is not limited to helping people with disabilities. Plain text can be helpful for people who want to learn about the main points or summary of a meeting rather than reading through the entire transcript, helping reduce cognitive load. Generating plain text versions of transcripts is an example of considering the diverse needs of people with disabilities and intersectional identities, ensuring that they effectively get the information they need.
 
-#### Leadership of Those Most Impacted
+### Leadership of Those Most Impacted {: style="color: #32006e;" }
 
 **What it means:** Leadership of Those Most Impacted in the context of disability is focusing on understanding the experiences of people who endure the most impact as a result of systems that are not designed to be inclusive. This principle emphasizes the importance of involving individuals most affected by a system or issue in the decision-making processes that shape their lives.
 
@@ -63,7 +65,7 @@ Once the video is processed, the result is a new section on the application with
 
 In the case that the project team decides to pursue the project beyond the class, the team will seek perspectives and direct involvement from people with disabilities to iterate on the tool’s design, ensuring that their needs are met. The project team is focused on making sure that the tool empowers all users to reach their full potential and first hand experiences are integrated in the design and development process. The project team is interested in understanding the experiences of people with disabilities in professional settings and in what ways they think a plaintext tool can support them.
 
-#### Recognizing Wholeness
+### Recognizing Wholeness {: style="color: #32006e;" }
 
 **What it means:** Recognizing Wholeness emphasizes acknowledging and respecting the full humanity and inherent value of individuals with disabilities, rather than defining them by their perceived limitations.
 
@@ -73,6 +75,6 @@ Learnings and future work ~1-2 paragraphs (about 400 words): Describe what you l
 
 We learned a significant amount on how technology can always be improved upon when considering accessibility. Simple changes such as the styling or typography and sizing of elements on a webpage can impact whether or not a user can use the technology, and we can make better strides to prevent these issues from happening. We also learned that while a good chunk of time spent on the functionality of the website is important, so is the documentation and the user-facing components. Something that can be furthered is using more of a custom combination of CSS with Gradio themes for the interface for more fine-grained styline details that ensure increased accessibility. When coding the project, we acknowledge that while the backend could be fully functional, it may not be usable if the user cannot easily interact with it and lacks accessible features.
 
-### Learnings and Future Work
+## Learnings and Future Work {: style="color: #32006e;" }
 
 Within the scope of programming the application, we learned new technologies that can improve upon current accessible technologies, such as the Speech-to-Text and Diarization models on Hugging Face. There is more to do for future work on choosing efficient models for PlainScribe, as the current models have limited processing capabilities when transcribing longer video files, such as movies and hour-long meetings. We discovered that the current version of the application can easily transcribe shorter videos within 3-5 minutes or so, but videos around 10 minutes have processing times that increase exponentially. We believe that using API calls to generative AI technologies, such as OpenAI’s ChatGPT, Groq, or Google Gemini would allow for faster and more refined plaintext transcription creation, but access to these APIs can be expensive. These APIs will provide us the flexibility of prompt engineering, which will help create refined output that further meets plain text guidelines. In the future, if there were to be an accessible free-tier AI model that can be used, this website would be able to process videos within seconds. We were also able to learn about efficient file management, including temporary file cleanup, when the user continues to use our application after a transcript is done with processing, and real-time progress tracking utilizing tools like TqdmProgressHook. We were able to improve our web app’s accessibility by informing the user of what the system is doing and how long it has left to transcribe. For progress checking, it would be interesting to see future work on informing the user in more accessible ways in addition to having a progress bar. Incorporating audio notifications about diarization and transcription progress can help increase accessibility.
