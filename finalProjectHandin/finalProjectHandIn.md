@@ -7,7 +7,7 @@ layout: post
 
 # PlainScribe: A web app for generating plain text subtitles and transcripts for videos {: style="color: #32006e;" }
 
-[**PlainScribe GitHub Repository**](https://github.com/mygcho/cse493e-final-project)
+[**Link to PlainScribe GitHub Repository**](https://github.com/mygcho/cse493e-final-project)
 
 ## Introduction {: style="color: #32006e;" }
 
@@ -39,9 +39,10 @@ Partially. While the project demonstrates intersectional awareness by addressing
 
 ## Methodology and Results {: style="color: #32006e;" }
 
-![Screenshot of PlainScribe web app user interface. On the left side of the interface, there is a box for entering YouTube video URL with Download Video button below it. Below the YouTube downloader is a box for Uploading a Video, with a white arrow upload icon indicating the user to “Drop Video Here or Click to Upload”. Below this section is a dropdown menu for selecting transcription language. Below the dropdown is the Transcribe button followed by a Clear button. On the right side, there is an empty box with a film camera icon in the middle.](C:/Users/sshre/CSE493E/cse493e-final-project/finalProjectHandin/images/PlainScribeUI1.png)
+![Screenshot of PlainScribe web app user interface. On the left side of the interface, there is a box for entering YouTube video URL with Download Video button below it. Below the YouTube downloader is a box for Uploading a Video, with a white arrow upload icon indicating the user to “Drop Video Here or Click to Upload”. Below this section is a dropdown menu for selecting transcription language. Below the dropdown is the Transcribe button followed by a Clear button. On the right side, there is an empty box with a film camera icon in the middle.](images/PlainScribeUI1.png)
 
-![Screenshot of PlainScribe web app user interface. On the left side of the interface, there is a box for entering YouTube video URL with Download Video button below it. Below the button is a thumbnail of a user’s uploaded video. Under the uploaded video thumbnail is dropdown menu for selecting transcription language. Below the dropdown is the Transcribe button followed by a Clear button. On the right side, there is an image of the video output. Under the video output image is an option to download the video followed by an option to download the plaintext transcript of the video.](C:/Users/sshre/CSE493E/cse493e-final-project/finalProjectHandin/images/PlainScribeUI2.png)
+
+![Screenshot of PlainScribe web app user interface. On the left side of the interface, there is a box for entering YouTube video URL with Download Video button below it. Below the button is a thumbnail of a user’s uploaded video. Under the uploaded video thumbnail is dropdown menu for selecting transcription language. Below the dropdown is the Transcribe button followed by a Clear button. On the right side, there is an image of the video output. Under the video output image is an option to download the video followed by an option to download the plaintext transcript of the video.](images/PlainScribeUI2.png)
 
 The main features we wanted to implement for this project was to add subtitles to videos that do not have them, and add downloading and transcribing features as a minimum functionality. Adding options for different transcription languages, and letting the user have the option to download the video, original subtitles, and the plain language subtitles created a large range of use for our application. To increase the flexibility and options for video input, we wanted to add the feature for users to be able to add a YouTube URL or directly be able to transcribe it through our app, and additionally let the user upload media from their own device.  We also had the goal of implementing real-time system feedback to the user through a progress bar, so the user is well-informed while using PlainScribe.
 
@@ -51,15 +52,18 @@ On the backend, the app downloads the video using the *YouTubeDL* library and ge
 
 To generate the plain text version of the transcript, the app uses Hugging Face’s *bart-large-cnn model*. The *Tqdm progress hook* is used to record progress on the diarization and audio transcription process. The progress for parsing who is speaking through diarization and transcribing the audio is displayed on the user interface as a progress bar. Using *Tqdm* helps provide users with clarity about where the script is in the diarization and transcription process, especially since video files take a long time to process.
 
-![A diagram of the frontend and backend tech stack. Within rectangular outlines connected by arrows, lists ffmpeg, YoutubeDL, and Gradio. Within circular outlines connected by arrows, lists TqdmProgressHook, Hugging Face Model, and pyannote audio pipeline.](C:/Users/sshre/CSE493E/cse493e-final-project/finalProjectHandin/images/architectureDiagram.png)
+![A diagram of the frontend and backend tech stack. Within rectangular outlines connected by arrows, lists ffmpeg, YoutubeDL, and Gradio. Within circular outlines connected by arrows, lists TqdmProgressHook, Hugging Face Model, and pyannote audio pipeline.](images/architectureDiagram.png)
 
 Once the video is processed, the result is a new section on the application with the options to download the video, download the subtitles, or download the plain language subtitles. Throughout the whole process, a purple progress bar shows how far along PlainScribe is in downloading and transcribing the application. They can be downloaded in .mov and .srt formats, respectively. The .srt file can be viewable via Microsoft Word, to ensure that the transcript is viewable in an accessible document. The subtitles contain the timestamps of the speaker notes, and show the real audio versus the plain language transcription from the PlainScribe application.
 
-![A screenshot of the original video transcript. Each line includes a timestamp of the video and has the captions below.](C:/Users/sshre/CSE493E/cse493e-final-project/finalProjectHandin/images/OriginalTranscript.png)
+![A screenshot of the original video transcript. Each line includes a timestamp of the video and has the captions below.](images/OriginalTranscript.png)
 *Original Video Transcript*
 
-![A screenshot of the plaintext video transcript after it has been processed by the PlainScribe application. Each line includes a timestamp of the video and has the simplified captions below.](C:/Users/sshre/CSE493E/cse493e-final-project/finalProjectHandin/images/PlainTextTranscript.png)
+![A screenshot of the plaintext video transcript after it has been processed by the PlainScribe application. Each line includes a timestamp of the video and has the simplified captions below.](images/PlainTextTranscript.png)
 *Plain Text Video Transcript*
+
+To test the accessibility of our application, the main tools we wanted to test with are magnifiers and screen readers. When resizing to 200% and using the magnifier for the resizing, the components of the application remain intact, and the user can scroll down to go to the next section. For the screen reader, each box and section headings are read out loud, including the downloadable files and that a video has to be uploaded by the user. 
+
 
 ## Disability Justice Analysis {: style="color: #32006e;" }
 
